@@ -9,15 +9,15 @@ subnet_name         = "existing-subne"
 # VM Configuration - List of VM Details
 vm_config = [
   {
-    size              = "Standard_B2ms"
+    size              = "Standard_D2s_v3"
     zone_list         = ["1", "2"]
-    vm_count_per_zone = 2
+    vm_count_per_zone = 1
     admin_username    = "adminuser"
     admin_password    = "Password123!"
     os_disk_size_gb   = 30
   },
   {
-    size              = "Standard_B4ms"
+    size              = "Standard_D2s_v3"
     zone_list         = ["1" ]
     vm_count_per_zone = 1
     admin_username    = "adminuser"

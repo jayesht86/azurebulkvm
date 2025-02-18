@@ -62,6 +62,7 @@ module "nic" {
   }
 
   resource_group_name = var.resource_group_name
+  #name                = "${each.value.name}-nic-${each.key}"
   location            = var.location
   subnet_id           = data.azurerm_subnet.existing_subnet.id
   vm_name             = each.value.name
@@ -73,9 +74,9 @@ module "disk" {
   source              = "C:\\Users\\Jayesh\\OneDrive\\Desktop\\azure\\bulkazureforeachvmcustomname\\module\\disk"
   vm_name             = each.value.name
   disks = [
-    { name = "${each.value.name}-data-disk1", size = 64 },
-    { name = "${each.value.name}-data-disk2", size = 128 },
-    { name = "${each.value.name}-data-disk3", size = 256 }
+    { name = "${each.value.name}-data-disk1-${each.key}", size = 64 },
+    { name = "${each.value.name}-data-disk2-${each.key}", size = 128 },
+    { name = "${each.value.name}-data-disk3-${each.key}", size = 256 }
   ]
   resource_group_name = var.resource_group_name
   location            = var.location
