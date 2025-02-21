@@ -10,9 +10,6 @@ variable "subnet_id" {
   type = string
 }
 
-variable "vm_name" {
-  type = string
-}
 variable "network_interfaces" {
   type = list(object({
     name                          = string
