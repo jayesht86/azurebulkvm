@@ -3,7 +3,7 @@ resource "azurerm_network_interface" "nic" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  enable_accelerated_networking = length(var.network_interfaces) > 0 ? var.network_interfaces[0].enable_accelerated_networking : false
+enable_accelerated_networking = each.value.enable_accelerated_networking
 
   dynamic "ip_configuration" {
     for_each = { for idx, ip_config in flatten([
